@@ -1,0 +1,102 @@
+﻿namespace Felsokning
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //Alexander Lundquist Klass: .NET23
+
+
+            //Case 1
+            // I detta case så saknades det ";" på rad 16. Console.WriteLine() ska alltid avslutas med semikolon
+            // PÅ rad 18 så saknades ett mellanrum i elseif som gjorde att den inte kunde fullfölja if statementet.
+            int number = 2;
+
+            if (number > 3)
+            {
+                Console.WriteLine("Talet är större än tre");
+            }else if(number < 3){
+                Console.WriteLine("Talet är mindre än tre");
+            }
+
+            //Case 2
+            // I detta fall så räknade for loopen upp tills i var mindre än 100 och därför så skrev programmet inte ut 100
+            // 
+            
+            for (int i = 1; i <= 100; i++)
+            {
+                Console.WriteLine(i);
+            }
+
+
+
+            //Case 3 
+            //I detta fall så ökade inte loopen hur många gånger den hade kört i varje iteration vilket ledde till att programmet inte kördes
+            //Detta kan ha lett till en infinity loop som gjort att programmet inte har komplierat
+
+            for (int i = 1; i <= 5; i++)
+            {
+                for (int j = 1; j <= i; j++)
+                {
+                    Console.Write(j + " ");
+                }
+                Console.WriteLine();
+            }
+
+
+
+
+
+            //Case 4
+            //I detta fall så finns det ingen overload method i Console.Write som inte tar några argument till skillnad från Console.WriteLine()
+            //som har en Overload metod som genererar en ny rad. Det saknades därför ett argument i Console.Write() metod.
+
+            int i = 1;
+            while (i <= 5)
+            {
+                for (int j = 1; j <= i; j++)
+                {
+                    Console.Write("10");
+                }
+
+                Console.WriteLine();
+                i++;
+            }
+
+
+
+
+            //Case 5
+            // Det saknades ett break i case 1. När man anväder switch statement så måste man avsluta varje case med ett break;
+            // Lösning var att lägga till en break till case 1
+
+            int i = 1;
+
+            switch (i)
+            {
+                case 1:
+                    break;
+                case 2:
+                    Console.WriteLine("Two");
+                    break;
+                default:
+                    Console.WriteLine("Other");
+                    break;
+            }
+
+            // Case 6
+            // I detta fall så saknades ett = tecken i If statementet för att göra det till ett condionell statement, = är för tildelning == är för att kolla om någon stämmer överens
+            // Lösning var att lägga till ett lika med tecken
+            int i = 10;
+
+            if (i == 5)
+            {
+                Console.WriteLine("i är 5");
+            }
+
+
+
+
+        }
+    }
+}
