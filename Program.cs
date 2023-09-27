@@ -1,0 +1,38 @@
+﻿namespace NumbersGame
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Random random = new Random();
+            int randomNumber = random.Next(1,20);
+
+            Console.WriteLine("Välkommen, Jag tänker på ett nummer. Kan du gissa vilket?(1-20), Du har fem försök!");
+            
+            for (int i = 0; i < 5; i++) {
+                Console.Write($"Gisning försök {i+1} :");
+                string geussString = Console.ReadLine();
+                int geussInt = int.Parse(geussString);
+
+                if (geussInt < randomNumber)
+                {
+                    Console.WriteLine("Tyvärr, Du gissade för lågt! Försök igen");
+                }else if (geussInt > randomNumber)
+                {
+                    Console.WriteLine("Tyvärr, Du gissade för högt");
+                }
+                else{
+                    Console.WriteLine("Wohoo, Du gissade rätt!");
+                    break;
+                }
+            
+            
+            }
+            
+
+
+
+
+        }
+    }
+}
